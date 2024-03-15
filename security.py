@@ -8,17 +8,37 @@ import re
 # define a class 
 class Security:
     
-
+    # Definition of the original function to receive and decrypted
     def secure(self, info):
+
+        # Divide the input parameter into words through the distance between them
         texts = info.split()
+
+        # Create a variable for the output parameter
         final_ouput_param = []
+        
+        # Navigation of words
         for text in texts:
+
+            # Checking the valid address of a social network
             if self.is_social_account_info(text):
+
+                # Define a pattern to finde social network username
                 pattern = r"[A-Z][\w]*:www.[\w\d\.]+\/([\w\d_]*)"
+
+                # Find a username using defined pattern
                 user = re.findall(pattern, text)
+
+                # Add the text -placed text from decoding the username to the variable Final_oupu_param
                 final_ouput_param.append(text.replace(user[0], self.encrypt(user[0])))
+
+                # Back to the first loop
                 continue
+
+            # Add the text to the variable Final_utput_param
             final_ouput_param.append(text)
+        
+        # The annexation of all the texts within the variable Final_utput_param and turned back to the program
         return ' '.join(final_ouput_param)
 
     # define the function for checking valid or not valid a social media address
