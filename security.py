@@ -4,20 +4,15 @@ class Security:
 
     def secure(self, info):
         texts = info.split()
-        # decrypted_user = dict()
         final_ouput_param = []
         for text in texts:
             if self.is_social_account_info(text):
                 pattern = r"[A-Z][\w]*:www.[\w\d\.]+\/([\w\d_]*)"
                 user = re.findall(pattern, text)
-                # print(type(user[0]))
-                # decrypted_user.update({user[0]: self.encrypt(user[0])})
                 final_ouput_param.append(text.replace(user[0], self.encrypt(user[0])))
                 continue
             final_ouput_param.append(text)
         return ' '.join(final_ouput_param)
-        # print(decrypted_user)
-        # print(final_ouput_param)
 
     def is_social_account_info(self, param):
         pattern = r"[A-Z][\w]*:www.[\w\d\.]+\/[\w\d_]*"
@@ -54,6 +49,4 @@ class Security:
         return final_decrypt
 
 security = Security()
-# print( security.encrypt('abcccdd'))
-# print( security.is_social_account_info('Twitter:www.twitter.com/javalover1990'))
 print(security.secure('FirstName:Ali, LastName:Alavi, BirthDate:1990/02/02 Gender:male Instagram:www.instagram.com/aalavi Degree:Master Twitter:www.twiter.com/alaviii imdb:www.imdb.com/alavi'))
