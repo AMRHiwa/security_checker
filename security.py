@@ -1,5 +1,11 @@
+# The program is developed by Mohammad Rasul Azizi 
+# winter 2024
+
+
+# Calling a Regex module to review a format in the text.
 import re
 
+# define a class 
 class Security:
 
     def secure(self, info):
@@ -14,10 +20,17 @@ class Security:
             final_ouput_param.append(text)
         return ' '.join(final_ouput_param)
 
+    # define the function for checking valid or not valid a social media address
     def is_social_account_info(self, param):
+
+        # define a pattern for social media address
         pattern = r"[A-Z][\w]*:www.[\w\d\.]+\/[\w\d_]*"
+
+        # If the pattern is compatible with the input parameter, send the TRUE phrase to the program.
         if re.match(pattern, param):
             return True
+
+        # If the condition is not made, the FALSE value will return to the program.
         else:
             return False
 
