@@ -81,12 +81,23 @@ class Security:
 
                     # Exit from the loop
                     break
-                
+        
+        # Create an empty dictionary to decrypt words
         decrypt_uniform = dict()
+
+        # Survey of the words inside Temp_cutting
         for item in temp_cutting:
+
+            # Definition of an empty string variable for decoding
             decrypt = ''
+
+            # Definition of a counter -letter from number 1
             count = 1
+
+            # Navigation of the word letters
             for letter in item:
+
+                # 
                 decrypt += str((ord(letter)-96)*count)
                 count += 1
             decrypt_uniform.update({item: decrypt})
