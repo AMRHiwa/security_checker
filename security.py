@@ -97,11 +97,19 @@ class Security:
             # Navigation of the word letters
             for letter in item:
 
-                # 
+                # Add the Ord code each letter to the decoded string
                 decrypt += str((ord(letter)-96)*count)
+
+                # Add to the counter
                 count += 1
+            
+            # Add the word along with decoding it to the dictionary
             decrypt_uniform.update({item: decrypt})
+
+        # Annexing the decoded texts together and storing them
         final_decrypt = ''.join(decrypt_uniform.values())
+
+        # Return decoded text to the application
         return final_decrypt
 
 security = Security()
