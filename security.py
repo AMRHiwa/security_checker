@@ -7,6 +7,7 @@ import re
 
 # define a class 
 class Security:
+    
 
     def secure(self, info):
         texts = info.split()
@@ -34,22 +35,53 @@ class Security:
         else:
             return False
 
+    # Definition of a function for decrypting username
     def encrypt(self, s):
+
+        # Add a distance to the end of the input parameter
         s = s + ' '
+        
+        # Create an empty list to put the input text pieces
         temp_cutting = list()
+
+        # Create a loop until the input text size greater than 1
         while len(s) > 1:
+
+            # Definition of Index
             index = 0
+
+            # Define a variable to store the current character's index for pointer
             current_letter_index = index
+
+            # Define a variable to save the current characters
             curent_letter = s[0]
+
+            # Definition of a variable to store the next characters' index
             next_letter_index = index + 1
+
+            # Survey of Input text letters from the second letter to the end
             for letter in s[1:]:
+
+                # If the current letter is the same as the character in the curent_letter variable
                 if curent_letter == letter:
+                    
+                    #  add a unit to the Next_letter_index variable.
                     next_letter_index += 1
+                
                 else:
+                
+                    # Definition of Last_letter_index variable to save the last letter index
                     last_letter_index = next_letter_index
+
+                    # Adding the separated section of the text from the current characters to the end of the characters
                     temp_cutting.append(s[current_letter_index:last_letter_index])
+
+                    # Reduce the separated section of the input text
                     s = s[last_letter_index:]
+
+                    # Exit from the loop
                     break
+                
         decrypt_uniform = dict()
         for item in temp_cutting:
             decrypt = ''
