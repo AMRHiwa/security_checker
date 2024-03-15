@@ -9,7 +9,7 @@ import re
 class Security:
     
     # Definition of the original function to receive and decrypted
-    def secure(self, info):
+    def secure(self, info: str) -> str:
 
         # Divide the input parameter into words through the distance between them
         texts = info.split()
@@ -35,14 +35,14 @@ class Security:
                 # Back to the first loop
                 continue
 
-            # Add the text to the variable Final_utput_param
+            # Add the text to the variable Final_output_param
             final_ouput_param.append(text)
         
         # The annexation of all the texts within the variable Final_utput_param and turned back to the program
         return ' '.join(final_ouput_param)
 
     # define the function for checking valid or not valid a social media address
-    def is_social_account_info(self, param):
+    def is_social_account_info(self, param: str) -> bool:
 
         # define a pattern for social media address
         pattern = r"[A-Z][\w]*:www.[\w\d\.]+\/[\w\d_]*"
@@ -56,7 +56,7 @@ class Security:
             return False
 
     # Definition of a function for decrypting username
-    def encrypt(self, s):
+    def encrypt(self, s: str) -> str:
 
         # Add a distance to the end of the input parameter
         s = s + ' '
