@@ -23,7 +23,7 @@ For example, the encryption value of the CCCC uniform is 36912.
 
 The weight of a character is equal to the numeric code of that character minus the number 96. 
 
-For example, the character code A is 97 and its weight is 97−96 = 197−96 = 1.
+For example, the character code A is 97 and its weight is 97−96 = 1.
 
 ---
 
