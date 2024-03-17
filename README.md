@@ -46,3 +46,25 @@ Domain only contains English lowercase letters and number and character.Is.
 The account address contains the letter or number or the subcategory (_).
 
 If the input field contains the address of a social network, the value of the TRUE should be returned and otherwise the FALSE value should be returned.
+
+---
+
+The secure method (Self, Info)
+
+Now, using the previous two methods, we want to encrypt the information.As that:
+
+Find sections that are related to user account information using the IS_social_account_info method.
+
+Crypt the Account Name section using the Encrypt method.
+
+**Example**
+
+Input is a text that includes an employee information, including zero or more information on various social networks.
+
+`FirstName: ali, LastName: Alavi, Birthdate: 1990/02/02 Gender: Male Instagram: www.instagram.com/aalavi Degree: Master Twitter: www.twiter.com/alaviii IMDB: www.imdb.com`
+
+
+__Output__
+
+`FirstName: ali, LastName: Alavi, Birthdate: 1990/02/02 Gender: Male Instagram: www.instagram.com/12121229 Degree: Master Twitter: www.twiter.com/11212291827 IMDB: www.imdb.com/`
+
