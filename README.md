@@ -31,11 +31,11 @@ Is_social_account_info method (Self, Param)
 
 This method receives a string as an input parameter and specifies in the output whether the field contains an address for a social network account.At the time of recruitment, the Conservation and Security Unit asked the address of all public accounts and stored in the documents as follows:
 
-[Social Network Name]: www. [Domain]/[Account Name]
+[Social Network Name]: www\. [Domain]/[Account Name]
 
 For example, Twitter Ali's account is as follows:
 
-Twitter: www.twitter.com/javalover1990
+Twitter: www\.twitter\.com/javalover1990
 
 Hints
 
